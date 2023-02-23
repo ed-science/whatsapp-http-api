@@ -31,7 +31,7 @@ def whatsapp_webhook():
         # Download file and set text to path
         client_url = payload["mediaUrl"]
         filename = client_url.split("/")[-1]
-        path = "/tmp/" + filename
+        path = f"/tmp/{filename}"
         r = requests.get(client_url)
         open(path, "wb").write(r.content)
         text = f"We have downloaded file here: {path}"
